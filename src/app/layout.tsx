@@ -2,23 +2,25 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Roadgun Mobile Repair | Mobile Mechanic Fayetteville NC",
+  title: "Roadgun Mobile Repair | Mobile Mechanic Jacksonville NC",
   icons: {
     icon: "/favicon.svg",
   },
   description:
-    "Roadgun Mobile Repair brings professional auto repair to your door. Mobile mechanic serving Fayetteville, NC and surrounding areas. Diagnostics, brakes, batteries, and more. Call (910) 358-9027.",
+    "Roadgun Mobile Repair brings professional auto repair to your door. Veteran-owned mobile mechanic serving Jacksonville, NC and surrounding areas. Diagnostics, brakes, batteries, trailers, and more. Call (910) 358-9027.",
   keywords: [
-    "mobile mechanic Fayetteville NC",
+    "mobile mechanic Jacksonville NC",
     "mobile auto repair",
     "on-site car repair",
     "roadside mechanic",
     "mobile mechanic near me",
+    "trailer repair",
+    "veteran owned mechanic",
   ],
   openGraph: {
-    title: "Roadgun Mobile Repair | Mobile Mechanic Fayetteville NC",
+    title: "Roadgun Mobile Repair | Mobile Mechanic Jacksonville NC",
     description:
-      "Professional auto repair that comes to you. Serving Fayetteville, NC and surrounding areas.",
+      "Veteran-owned mobile mechanic serving Jacksonville, NC and surrounding areas. 26 years of experience.",
     images: ["/images/hero-poster.jpg"],
     type: "website",
     locale: "en_US",
@@ -26,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Roadgun Mobile Repair | Mobile Mechanic Fayetteville NC",
+    title: "Roadgun Mobile Repair | Mobile Mechanic Jacksonville NC",
     description:
-      "Professional auto repair that comes to you. Serving Fayetteville, NC and surrounding areas.",
+      "Veteran-owned mobile mechanic serving Jacksonville, NC and surrounding areas. 26 years of experience.",
     images: ["/images/hero-poster.jpg"],
   },
   robots: {
@@ -81,7 +83,23 @@ export default function RootLayout({
               areaServed: [
                 {
                   "@type": "City",
-                  name: "Fayetteville",
+                  name: "Jacksonville",
+                  containedInPlace: {
+                    "@type": "State",
+                    name: "North Carolina",
+                  },
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  name: "Onslow County",
+                  containedInPlace: {
+                    "@type": "State",
+                    name: "North Carolina",
+                  },
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  name: "Craven County",
                   containedInPlace: {
                     "@type": "State",
                     name: "North Carolina",
@@ -89,31 +107,15 @@ export default function RootLayout({
                 },
                 {
                   "@type": "City",
-                  name: "Fort Liberty",
+                  name: "Holly Ridge",
                   containedInPlace: {
                     "@type": "State",
                     name: "North Carolina",
                   },
                 },
                 {
-                  "@type": "City",
-                  name: "Spring Lake",
-                  containedInPlace: {
-                    "@type": "State",
-                    name: "North Carolina",
-                  },
-                },
-                {
-                  "@type": "City",
-                  name: "Hope Mills",
-                  containedInPlace: {
-                    "@type": "State",
-                    name: "North Carolina",
-                  },
-                },
-                {
-                  "@type": "City",
-                  name: "Raeford",
+                  "@type": "AdministrativeArea",
+                  name: "Jones County",
                   containedInPlace: {
                     "@type": "State",
                     name: "North Carolina",

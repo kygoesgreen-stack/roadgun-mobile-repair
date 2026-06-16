@@ -86,6 +86,16 @@ const services = [
       </svg>
     ),
   },
+  {
+    title: "Trailer Services",
+    description:
+      "Wiring, lights, brakes, axles, and bearings on utility, cargo, equipment, and boat trailers. We keep your trailer road-ready.",
+    icon: (
+      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21a.75.75 0 00.75-.75V11.25a3 3 0 00-3-3h-1.5l-1.72-4.575A1.5 1.5 0 0014.663 2H9.337a1.5 1.5 0 00-1.432 1.05L6.187 7.5H4.5a3 3 0 00-3 3v6.375c0 .621.504 1.125 1.125 1.125h1.5" />
+      </svg>
+    ),
+  },
 ];
 
 const containerVariants = {
@@ -119,8 +129,7 @@ export default function Services() {
             Mobile Repair Services
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-steel-400">
-            {/* TODO: Confirm actual service list with client and any specialties (diesel, specific makes, etc.) */}
-            Everything a shop can do, we can do right in your driveway.
+            Everything a shop can do, we can do right in your driveway &mdash; including trailers.
           </p>
         </motion.div>
 

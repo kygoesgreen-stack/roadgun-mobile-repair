@@ -122,7 +122,7 @@ export default function Hero() {
             </div>
 
             <p className="mt-2 text-sm text-steel-400">
-              Trusted by vehicle owners across the Fayetteville area
+              Trusted by vehicle owners across the Jacksonville, NC area
             </p>
 
             {/* CTAs */}

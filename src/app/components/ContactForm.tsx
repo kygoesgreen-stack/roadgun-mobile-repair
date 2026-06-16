@@ -374,8 +374,8 @@ export default function ContactForm() {
                   </svg>
                   <div>
                     <p className="font-medium text-white">Service Area</p>
-                    <p className="text-sm">Fayetteville, NC region</p>
-                    <p className="text-sm">And surrounding communities</p>
+                    <p className="text-sm">Jacksonville, NC region</p>
+                    <p className="text-sm">Onslow, Craven, Jones County &amp; more</p>
                   </div>
                 </div>
               </div>

@@ -11,7 +11,7 @@ export default function Footer() {
               Roadgun<span className="text-orange-500">.</span>
             </p>
             <p className="mt-3 text-sm leading-relaxed text-steel-400">
-              Professional mobile auto repair serving Fayetteville, NC and
+              Professional mobile auto repair serving Jacksonville, NC and
               surrounding areas. We come to you.
             </p>
           </div>
@@ -26,10 +26,12 @@ export default function Footer() {
               >
                 (910) 358-9027
               </a>
-              <p className="text-sm text-steel-400">
-                {/* TODO: Confirm email with client if they have a business email */}
-                Call or request service online
-              </p>
+              <a
+                href="mailto:roadgun.repair@gmail.com"
+                className="block text-sm text-steel-400 transition-colors hover:text-orange-400"
+              >
+                roadgun.repair@gmail.com
+              </a>
             </div>
           </div>
 
@@ -47,11 +49,11 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold text-white">Service Area</p>
             <div className="mt-3 space-y-1">
-              <p className="text-sm text-steel-400">Fayetteville, NC</p>
-              <p className="text-sm text-steel-400">Fort Liberty</p>
-              <p className="text-sm text-steel-400">Hope Mills</p>
-              <p className="text-sm text-steel-400">Spring Lake</p>
-              {/* TODO: Confirm full service radius with client */}
+              <p className="text-sm text-steel-400">Jacksonville, NC</p>
+              <p className="text-sm text-steel-400">Onslow County</p>
+              <p className="text-sm text-steel-400">Craven County</p>
+              <p className="text-sm text-steel-400">Holly Ridge</p>
+              <p className="text-sm text-steel-400">Jones County</p>
             </div>
           </div>
         </div>

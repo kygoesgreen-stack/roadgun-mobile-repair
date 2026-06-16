@@ -3,16 +3,16 @@
 import { motion } from "framer-motion";
 
 const towns = [
-  "Fayetteville",
-  "Fort Liberty",
-  "Spring Lake",
-  "Hope Mills",
-  "Raeford",
-  "Fayetteville",
-  "Fort Bragg",
-  "Lumberton",
-  "Sanford",
-  "Southern Pines",
+  "Jacksonville",
+  "Onslow County",
+  "Craven County",
+  "Holly Ridge",
+  "Jones County",
+  "Camp Lejeune",
+  "Swansboro",
+  "Richlands",
+  "Hubert",
+  "Maysville",
 ];
 
 export default function ServiceArea() {
@@ -26,17 +26,16 @@ export default function ServiceArea() {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl text-center"
         >
-          {/* TODO: Confirm exact city and service radius with the client */}
           <p className="text-sm font-semibold uppercase tracking-widest text-orange-500">
             Service Area
           </p>
           <h2 className="mt-3 text-3xl font-bold text-white font-[family-name:var(--font-display)] sm:text-4xl lg:text-5xl">
-            Serving the Fayetteville, NC Region
+            Serving the Jacksonville, NC Region
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-steel-400">
-            Roadgun Mobile Repair serves Fayetteville and surrounding
-            communities across southeastern North Carolina. If you are within a
-            reasonable drive, we will come to you.
+            Roadgun Mobile Repair serves Jacksonville and surrounding
+            communities across Onslow County and beyond. If you are within a
+            45-minute to hour-and-a-half drive, we will come to you.
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -72,10 +71,10 @@ export default function ServiceArea() {
               </svg>
               <div className="text-center sm:text-left">
                 <p className="text-lg font-semibold text-white">
-                  Fayetteville, North Carolina
+                  Jacksonville, North Carolina
                 </p>
                 <p className="text-sm text-steel-400">
-                  And surrounding communities within the 910 area code
+                  Onslow County, Craven County, Holly Ridge, Jones County &amp; surrounding areas
                 </p>
               </div>
             </div>
