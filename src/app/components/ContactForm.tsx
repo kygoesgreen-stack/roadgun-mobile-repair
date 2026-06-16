@@ -64,10 +64,6 @@ export default function ContactForm() {
     setStatus("submitting");
 
     try {
-      const webhookUrl =
-        process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL ||
-        "https://n8n-production-2c97.up.railway.app/webhook/3d2c8a91-1493-4b90-86e9-b9269333c630";
-
       const payload = {
         name: formData.name.trim(),
         phone: formData.phone.trim(),
@@ -83,7 +79,7 @@ export default function ContactForm() {
         submittedAt: new Date().toISOString(),
       };
 
-      const res = await fetch(webhookUrl, {
+      const res = await fetch("/api/submit-form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
