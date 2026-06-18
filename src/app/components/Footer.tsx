@@ -39,9 +39,10 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold text-white">Hours</p>
             <div className="mt-3 space-y-1">
-              <p className="text-sm text-steel-400">Monday - Saturday</p>
+              <p className="text-sm text-steel-400">Monday - Friday</p>
               <p className="text-sm text-steel-400">6:00 AM - 6:00 PM</p>
-              {/* TODO: Confirm hours with client */}
+              <p className="text-sm text-steel-400">Saturday - Sunday</p>
+              <p className="text-sm text-steel-400">Closed</p>
             </div>
           </div>
 

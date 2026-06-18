@@ -357,9 +357,10 @@ export default function ContactForm() {
                   </svg>
                   <div>
                     <p className="font-medium text-white">Hours</p>
-                    <p className="text-sm">Monday - Saturday</p>
+                    <p className="text-sm">Monday - Friday</p>
                     <p className="text-sm">6:00 AM - 6:00 PM</p>
-                    {/* TODO: Confirm hours with client. Early start (6 AM) is a key selling point. */}
+                    <p className="text-sm">Saturday - Sunday</p>
+                    <p className="text-sm">Closed</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 text-steel-300">
