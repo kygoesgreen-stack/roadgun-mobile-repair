@@ -130,7 +130,7 @@ export default function Services() {
             Mobile Repair Services
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-steel-400">
-            Everything a shop can do, we can do right in your driveway &mdash; including trailers.
+            Skip the tow and the waiting room. We bring the shop to your driveway for normal maintenance and minor repairs.
           </p>
         </motion.div>
 

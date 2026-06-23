@@ -100,7 +100,7 @@ export default function Hero() {
 
             <p className="mt-6 max-w-xl text-lg text-steel-300 sm:text-xl">
               Professional auto repair at your home, office, or roadside.
-              No tow truck needed. No waiting at a shop. Just honest, reliable
+              No waiting at a shop. Just honest, reliable
               service right where you are.
             </p>
 
