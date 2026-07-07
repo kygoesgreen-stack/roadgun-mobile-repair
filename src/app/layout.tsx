@@ -4,7 +4,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Roadgun Mobile Repair | Mobile Mechanic Jacksonville NC",
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: { url: "/favicon.ico", rel: "icon" },
   },
   description:
     "Roadgun Mobile Repair brings professional auto repair to your door. Veteran-owned mobile mechanic serving Jacksonville, NC and surrounding areas. Diagnostics, brakes, batteries, trailers, and more. Call (910) 358-9027.",
