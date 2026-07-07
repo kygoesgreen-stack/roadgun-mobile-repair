@@ -1,59 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
-  useEffect(() => {
-    if (videoRef.current && !reducedMotion) {
-      videoRef.current.play().catch(() => {});
-    }
-  }, [reducedMotion]);
-
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background video */}
+      {/* Static background image */}
       <div className="absolute inset-0">
-        {reducedMotion ? (
-          <img
-            src="/images/hero-poster.jpg"
-            alt="Mechanic working under the hood of a car"
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <>
-            <img
-              src="/images/hero-poster.jpg"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              poster="/images/hero-poster.jpg"
-              className="absolute inset-0 h-full w-full object-cover"
-              aria-hidden="true"
-            >
-              <source src="/images/hero-video.mp4" type="video/mp4" />
-            </video>
-          </>
-        )}
+        <img
+          src="/images/hero-poster.jpg"
+          alt="Mechanic working under the hood of a car"
+          className="h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/80 via-dark-900/60 to-dark-900" />
       </div>
 

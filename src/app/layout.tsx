@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://roadgunrepairs.com"),
+  alternates: { canonical: "https://roadgunrepairs.com" },
   title: "Roadgun Mobile Repair | Mobile Mechanic Jacksonville NC",
   icons: {
     icon: [
@@ -69,70 +71,77 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "AutoRepair",
+              "@id": "https://roadgunrepairs.com/#business",
               name: "Roadgun Mobile Repair",
+              url: "https://roadgunrepairs.com",
+              image: "https://roadgunrepairs.com/images/hero-poster.jpg",
+              logo: "https://roadgunrepairs.com/favicon-32.png",
               telephone: "+19103589027",
+              priceRange: "$$",
+              description:
+                "Veteran-owned mobile mechanic serving Jacksonville, NC and surrounding areas. On-site diagnostics, brakes, batteries, trailer repair, and more.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Jacksonville",
+                addressRegion: "NC",
+                postalCode: "28540",
+                addressCountry: "US",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 34.7541,
+                longitude: -77.4302,
+              },
+              sameAs: [
+                "https://www.facebook.com/p/Road-gun-Mobile-Repair-61580390874069/",
+                "https://www.mapquest.com/us/north-carolina/road-gun-mobile-repair-790639151",
+                "https://www.yelp.com/biz/road-gun-mobile-repair-jacksonville",
+              ],
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                  ],
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
                   opens: "06:00",
                   closes: "18:00",
                 },
               ],
               areaServed: [
-                {
-                  "@type": "City",
-                  name: "Jacksonville",
-                  containedInPlace: {
-                    "@type": "State",
-                    name: "North Carolina",
-                  },
-                },
-                {
-                  "@type": "AdministrativeArea",
-                  name: "Onslow County",
-                  containedInPlace: {
-                    "@type": "State",
-                    name: "North Carolina",
-                  },
-                },
-                {
-                  "@type": "AdministrativeArea",
-                  name: "Craven County",
-                  containedInPlace: {
-                    "@type": "State",
-                    name: "North Carolina",
-                  },
-                },
-                {
-                  "@type": "City",
-                  name: "Holly Ridge",
-                  containedInPlace: {
-                    "@type": "State",
-                    name: "North Carolina",
-                  },
-                },
-                {
-                  "@type": "AdministrativeArea",
-                  name: "Jones County",
-                  containedInPlace: {
-                    "@type": "State",
-                    name: "North Carolina",
-                  },
-                },
+                { "@type": "City", name: "Jacksonville", containedInPlace: { "@type": "State", name: "North Carolina" } },
+                { "@type": "City", name: "Holly Ridge", containedInPlace: { "@type": "State", name: "North Carolina" } },
+                { "@type": "AdministrativeArea", name: "Onslow County", containedInPlace: { "@type": "State", name: "North Carolina" } },
+                { "@type": "AdministrativeArea", name: "Craven County", containedInPlace: { "@type": "State", name: "North Carolina" } },
+                { "@type": "AdministrativeArea", name: "Jones County", containedInPlace: { "@type": "State", name: "North Carolina" } },
+              ],
+              makesOffer: [
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Vehicle Diagnostics" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brake Repair" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Battery Replacement" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Trailer Repair" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Auto Repair" } },
               ],
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5.0",
-                bestRating: "5.0",
-                worstRating: "5.0",
+                bestRating: "5",
+                worstRating: "1",
+                reviewCount: "2",
               },
+              review: [
+                {
+                  "@type": "Review",
+                  author: { "@type": "Person", name: "Matthew Bennett" },
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  reviewBody:
+                    "Travis goes above and beyond fixing all my equipment and keeping it operational. Highly recommend and used his services on multiple different occasions.",
+                },
+                {
+                  "@type": "Review",
+                  author: { "@type": "Person", name: "Eric Coleman" },
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  reviewBody:
+                    "Travis has helped me literally bring my vehicle back to life over the past 6 to 12 months and the service has hands down been nothing but the best.",
+                },
+              ],
             }),
           }}
         />

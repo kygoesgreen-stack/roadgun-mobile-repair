@@ -14,6 +14,32 @@ export default function Footer() {
               Professional mobile auto repair serving Jacksonville, NC and
               surrounding areas. We come to you.
             </p>
+            <div className="mt-4 flex gap-4">
+              <a
+                href="https://www.facebook.com/p/Road-gun-Mobile-Repair-61580390874069/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-steel-400 transition-colors hover:text-orange-400"
+              >
+                Facebook
+              </a>
+              <a
+                href="https://www.yelp.com/biz/road-gun-mobile-repair-jacksonville"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-steel-400 transition-colors hover:text-orange-400"
+              >
+                Yelp
+              </a>
+              <a
+                href="https://www.mapquest.com/us/north-carolina/road-gun-mobile-repair-790639151"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-steel-400 transition-colors hover:text-orange-400"
+              >
+                MapQuest
+              </a>
+            </div>
           </div>
 
           {/* Contact */}
