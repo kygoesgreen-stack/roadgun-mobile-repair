@@ -90,10 +90,20 @@ export default function Footer() {
             <p className="text-xs text-steel-500">
               &copy; {year} Roadgun Mobile Repair. All rights reserved.
             </p>
-            <p className="text-xs text-steel-500">
-              {/* Website credit placeholder */}
-              &nbsp;
-            </p>
+            <div className="flex gap-4 text-xs text-steel-500">
+              <a
+                href="/privacy-policy"
+                className="transition-colors hover:text-orange-400"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="/terms"
+                className="transition-colors hover:text-orange-400"
+              >
+                Terms &amp; Conditions
+              </a>
+            </div>
           </div>
         </div>
       </div>
