@@ -119,29 +119,13 @@ export default function RootLayout({
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Trailer Repair" } },
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Auto Repair" } },
               ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0",
-                bestRating: "5",
-                worstRating: "1",
-                reviewCount: "2",
-              },
-              review: [
-                {
-                  "@type": "Review",
-                  author: { "@type": "Person", name: "Matthew Bennett" },
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  reviewBody:
-                    "Travis goes above and beyond fixing all my equipment and keeping it operational. Highly recommend and used his services on multiple different occasions.",
-                },
-                {
-                  "@type": "Review",
-                  author: { "@type": "Person", name: "Eric Coleman" },
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  reviewBody:
-                    "Travis has helped me literally bring my vehicle back to life over the past 6 to 12 months and the service has hands down been nothing but the best.",
-                },
-              ],
+              // aggregateRating and review intentionally omitted.
+              // This markup PASSED Google's Rich Results validation (@type
+              // AutoRepair is a real schema.org type, unlike the invalid types
+              // two sibling sites were using) and stars still never rendered,
+              // because self-serving first-party reviews on your own domain
+              // have been suppressed since 2019. Valid markup does not change
+              // that. The visible testimonials on the page are untouched.
             }),
           }}
         />
