@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import TrackEvent from "./components/TrackEvent";
+import { AREA_SERVED, BUSINESS_ID, SITE_URL, pageMetadata } from "@/src/lib/site";
 
+const HOME_TITLE = "Mobile Mechanic in Jacksonville, NC | Roadgun Mobile Repair";
+const HOME_DESCRIPTION =
+  "Veteran-owned mobile mechanic in Jacksonville, NC. Diagnostics, brakes, batteries and more at your home or work. 26 years experience. Call (910) 358-9027.";
+
+// Defaults are the homepage values; every other page sets its own title,
+// description, canonical, and social tags through pageMetadata().
 export const metadata: Metadata = {
-  metadataBase: new URL("https://roadgunrepairs.com"),
-  alternates: { canonical: "https://roadgunrepairs.com" },
-  title: "Roadgun Mobile Repair | Mobile Mechanic Jacksonville NC",
+  metadataBase: new URL(SITE_URL),
+  ...pageMetadata({ title: HOME_TITLE, description: HOME_DESCRIPTION, path: "/" }),
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -13,33 +20,6 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
     other: { url: "/favicon.ico", rel: "icon" },
-  },
-  description:
-    "Roadgun Mobile Repair brings professional auto repair to your door. Veteran-owned mobile mechanic serving Jacksonville, NC and surrounding areas. Diagnostics, brakes, batteries, trailers, and more. Call (910) 358-9027.",
-  keywords: [
-    "mobile mechanic Jacksonville NC",
-    "mobile auto repair",
-    "on-site car repair",
-    "roadside mechanic",
-    "mobile mechanic near me",
-    "trailer repair",
-    "veteran owned mechanic",
-  ],
-  openGraph: {
-    title: "Roadgun Mobile Repair | Mobile Mechanic Jacksonville NC",
-    description:
-      "Veteran-owned mobile mechanic serving Jacksonville, NC and surrounding areas. 26 years of experience.",
-    images: ["/images/hero-poster.jpg"],
-    type: "website",
-    locale: "en_US",
-    siteName: "Roadgun Mobile Repair",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Roadgun Mobile Repair | Mobile Mechanic Jacksonville NC",
-    description:
-      "Veteran-owned mobile mechanic serving Jacksonville, NC and surrounding areas. 26 years of experience.",
-    images: ["/images/hero-poster.jpg"],
   },
   robots: {
     index: true,
@@ -71,9 +51,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "AutoRepair",
-              "@id": "https://roadgunrepairs.com/#business",
+              "@id": BUSINESS_ID,
               name: "Roadgun Mobile Repair",
-              url: "https://roadgunrepairs.com",
+              url: `${SITE_URL}/`,
               image: "https://roadgunrepairs.com/images/hero-poster.jpg",
               logo: "https://roadgunrepairs.com/favicon-32.png",
               telephone: "+19103589027",
@@ -105,13 +85,7 @@ export default function RootLayout({
                   closes: "18:00",
                 },
               ],
-              areaServed: [
-                { "@type": "City", name: "Jacksonville", containedInPlace: { "@type": "State", name: "North Carolina" } },
-                { "@type": "City", name: "Holly Ridge", containedInPlace: { "@type": "State", name: "North Carolina" } },
-                { "@type": "AdministrativeArea", name: "Onslow County", containedInPlace: { "@type": "State", name: "North Carolina" } },
-                { "@type": "AdministrativeArea", name: "Craven County", containedInPlace: { "@type": "State", name: "North Carolina" } },
-                { "@type": "AdministrativeArea", name: "Jones County", containedInPlace: { "@type": "State", name: "North Carolina" } },
-              ],
+              areaServed: AREA_SERVED,
               makesOffer: [
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Vehicle Diagnostics" } },
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brake Repair" } },
@@ -130,7 +104,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <TrackEvent />
+      </body>
     </html>
   );
 }
