@@ -4,7 +4,8 @@ export const metadata: Metadata = {
   title: "Terms and Conditions | Roadgun Mobile Repair",
   description:
     "Terms and conditions for Roadgun Mobile Repair services. Read about our service policies, warranties, and terms.",
-  alternates: { canonical: "https://roadgunrepairs.com/terms" },
+  alternates: { canonical: "https://roadgunrepairs.com/terms/" },
+  robots: { index: false, follow: true },
 };
 
 export default function TermsAndConditions() {
@@ -12,6 +13,9 @@ export default function TermsAndConditions() {
     <main className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold text-white font-[family-name:var(--font-display)]">
         Terms and Conditions
+        <span className="mt-1 block text-base font-medium text-steel-400">
+          Roadgun Mobile Repair, Jacksonville, NC
+        </span>
       </h1>
       <p className="mt-2 text-sm text-steel-400">
         Last updated: July 24, 2026
