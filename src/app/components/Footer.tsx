@@ -1,3 +1,5 @@
+import { confirmedAreas } from "@/src/lib/areas";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -76,11 +78,21 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold text-white">Service Area</p>
             <div className="mt-3 space-y-1">
-              <p className="text-sm text-steel-400">Jacksonville, NC</p>
-              <p className="text-sm text-steel-400">Onslow County</p>
-              <p className="text-sm text-steel-400">Craven County</p>
-              <p className="text-sm text-steel-400">Holly Ridge</p>
-              <p className="text-sm text-steel-400">Jones County</p>
+              {confirmedAreas.map((a) => (
+                <a
+                  key={a.slug}
+                  href={`/service-areas/${a.slug}/`}
+                  className="block text-sm text-steel-400 transition-colors hover:text-orange-400"
+                >
+                  {a.town}, NC
+                </a>
+              ))}
+              <a
+                href="/services/"
+                className="block pt-2 text-sm font-semibold text-steel-300 transition-colors hover:text-orange-400"
+              >
+                All services
+              </a>
             </div>
           </div>
         </div>
@@ -92,13 +104,13 @@ export default function Footer() {
             </p>
             <div className="flex gap-4 text-xs text-steel-500">
               <a
-                href="/privacy-policy"
+                href="/privacy-policy/"
                 className="transition-colors hover:text-orange-400"
               >
                 Privacy Policy
               </a>
               <a
-                href="/terms"
+                href="/terms/"
                 className="transition-colors hover:text-orange-400"
               >
                 Terms &amp; Conditions

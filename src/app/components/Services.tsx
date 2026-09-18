@@ -1,12 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getService } from "@/src/lib/services";
 
-const services = [
+const cards = [
   {
-    title: "On-Site Diagnostics",
-    description:
-      "Check engine light on? Car not starting? We bring professional diagnostic tools to your location and get to the bottom of it fast.",
+    slug: "mobile-diagnostics",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
@@ -14,9 +13,7 @@ const services = [
     ),
   },
   {
-    title: "Brake Service",
-    description:
-      "Pads, rotors, calipers, and brake fluid. We handle the full brake job right in your driveway so you can stop with confidence.",
+    slug: "brake-repair",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -25,9 +22,7 @@ const services = [
     ),
   },
   {
-    title: "Batteries & Charging",
-    description:
-      "Dead battery or failing alternator? We test, replace, and get you back on the road without a trip to the parts store.",
+    slug: "battery-replacement",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 10.5h.375c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H21M4.5 10.5H18V15a2.25 2.25 0 01-2.25 2.25h-9A2.25 2.25 0 014.5 15v-4.5zM3.75 18h15A2.25 2.25 0 0021 15.75v-6a2.25 2.25 0 00-2.25-2.25h-15A2.25 2.25 0 001.5 9.75v6A2.25 2.25 0 003.75 18z" />
@@ -35,9 +30,7 @@ const services = [
     ),
   },
   {
-    title: "Starters & Alternators",
-    description:
-      "Grinding start or dimming lights? We diagnose and replace starters and alternators on-site to keep your electrical system healthy.",
+    slug: "starter-alternator-repair",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -45,9 +38,7 @@ const services = [
     ),
   },
   {
-    title: "Oil & Fluid Changes",
-    description:
-      "Keep your engine protected with fresh oil, transmission fluid, coolant, and power steering fluid. Quick service at your convenience.",
+    slug: "oil-change",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
@@ -56,9 +47,7 @@ const services = [
     ),
   },
   {
-    title: "Belts & Hoses",
-    description:
-      "Cracked serpentine belt or aging radiator hose? We inspect and replace them before they leave you stranded.",
+    slug: "belts-hoses",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.384 3.18a1.125 1.125 0 01-1.584-1.184l.567-5.857m6.401 3.861l5.384 3.18a1.125 1.125 0 001.584-1.184l-.567-5.857m-6.401 3.861L5.27 6.016" />
@@ -67,9 +56,7 @@ const services = [
     ),
   },
   {
-    title: "Check Engine Light",
-    description:
-      "We scan, read the codes, and give you an honest answer about what is going on and what needs to be done. No guesswork.",
+    slug: "check-engine-light",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
@@ -77,9 +64,7 @@ const services = [
     ),
   },
   {
-    title: "Pre-Purchase Inspections",
-    description:
-      "Buying a used vehicle? Get a thorough, honest inspection at the seller's location before you commit your money.",
+    slug: "pre-purchase-inspection",
     mobileOnly: true,
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -88,9 +73,7 @@ const services = [
     ),
   },
   {
-    title: "Trailer Services",
-    description:
-      "Wiring, lights, brakes, axles, and bearings on utility, cargo, equipment, and boat trailers. We keep your trailer road-ready.",
+    slug: "trailer-repair",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21a.75.75 0 00.75-.75V11.25a3 3 0 00-3-3h-1.5l-1.72-4.575A1.5 1.5 0 0014.663 2H9.337a1.5 1.5 0 00-1.432 1.05L6.187 7.5H4.5a3 3 0 00-3 3v6.375c0 .621.504 1.125 1.125 1.125h1.5" />
@@ -132,6 +115,9 @@ export default function Services() {
           <p className="mx-auto mt-4 max-w-2xl text-lg text-steel-400">
             Skip the tow and the waiting room. We bring the shop to your driveway for normal maintenance and minor repairs.
           </p>
+          <a href="/services/" className="mt-4 inline-block text-sm font-semibold text-orange-400 hover:underline">
+            See all services
+          </a>
         </motion.div>
 
         <motion.div
@@ -141,23 +127,27 @@ export default function Services() {
           viewport={{ once: true, margin: "-80px" }}
           className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {services.map((service) => (
-            <motion.div
-              key={service.title}
-              variants={itemVariants}
-              className={`group rounded-xl border border-dark-600 bg-dark-800 p-6 transition-all duration-300 hover:border-orange-500/30 hover:bg-dark-700${service.mobileOnly ? " lg:hidden" : ""}`}
-            >
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-orange-500/10 text-orange-400 transition-colors group-hover:bg-orange-500/20">
-                {service.icon}
-              </div>
-              <h3 className="text-lg font-semibold text-white font-[family-name:var(--font-display)]">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-steel-400">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
+          {cards.map((card) => {
+            const service = getService(card.slug)!;
+            return (
+              <motion.a
+                key={card.slug}
+                href={`/services/${card.slug}/`}
+                variants={itemVariants}
+                className={`group block rounded-xl border border-dark-600 bg-dark-800 p-6 transition-all duration-300 hover:border-orange-500/30 hover:bg-dark-700${card.mobileOnly ? " lg:hidden" : ""}`}
+              >
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-orange-500/10 text-orange-400 transition-colors group-hover:bg-orange-500/20">
+                  {card.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-white font-[family-name:var(--font-display)] group-hover:text-orange-400">
+                  {service.cardTitle}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-steel-400">
+                  {service.cardDescription}
+                </p>
+              </motion.a>
+            );
+          })}
         </motion.div>
       </div>
     </section>

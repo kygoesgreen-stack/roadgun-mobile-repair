@@ -2,22 +2,23 @@
 
 import { motion } from "framer-motion";
 
-const towns = [
-  "Jacksonville",
-  "Onslow County",
-  "Craven County",
-  "Holly Ridge",
-  "Jones County",
-  "Camp Lejeune",
-  "Swansboro",
-  "Richlands",
-  "Hubert",
-  "Maysville",
+// Towns with an href have their own page under /service-areas/.
+const towns: { name: string; href?: string }[] = [
+  { name: "Jacksonville", href: "/service-areas/jacksonville-nc/" },
+  { name: "Onslow County" },
+  { name: "Craven County" },
+  { name: "Holly Ridge", href: "/service-areas/holly-ridge-nc/" },
+  { name: "Jones County" },
+  { name: "Camp Lejeune", href: "/service-areas/camp-lejeune-nc/" },
+  { name: "Swansboro", href: "/service-areas/swansboro-nc/" },
+  { name: "Richlands", href: "/service-areas/richlands-nc/" },
+  { name: "Hubert", href: "/service-areas/hubert-nc/" },
+  { name: "Maysville" },
 ];
 
 export default function ServiceArea() {
   return (
-    <section className="bg-dark-900 py-20 sm:py-28">
+    <section id="areas" className="bg-dark-900 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,14 +40,24 @@ export default function ServiceArea() {
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {towns.map((town) => (
-              <span
-                key={town}
-                className="rounded-full border border-dark-600 bg-dark-800 px-4 py-2 text-sm font-medium text-steel-300 transition-colors hover:border-orange-500/30 hover:text-orange-400"
-              >
-                {town}
-              </span>
-            ))}
+            {towns.map((town) =>
+              town.href ? (
+                <a
+                  key={town.name}
+                  href={town.href}
+                  className="rounded-full border border-orange-500/30 bg-dark-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:border-orange-500/60 hover:text-orange-400"
+                >
+                  {town.name}
+                </a>
+              ) : (
+                <span
+                  key={town.name}
+                  className="rounded-full border border-dark-600 bg-dark-800 px-4 py-2 text-sm font-medium text-steel-300"
+                >
+                  {town.name}
+                </span>
+              )
+            )}
           </div>
 
           <div className="mt-10 rounded-xl border border-dark-600 bg-dark-800 p-6 sm:p-8">

@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Absolute paths so the nav works from service and area pages too.
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#contact", label: "Contact" },
+  { href: "/services/", label: "Services" },
+  { href: "/service-areas/", label: "Areas" },
+  { href: "/#about", label: "About" },
+  { href: "/#reviews", label: "Reviews" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -31,7 +33,7 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between sm:h-20">
           <a
-            href="#"
+            href="/"
             className="text-xl font-bold tracking-tight text-white font-[family-name:var(--font-display)] sm:text-2xl"
           >
             Roadgun<span className="text-orange-500">.</span>
