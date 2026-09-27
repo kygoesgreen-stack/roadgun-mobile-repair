@@ -39,7 +39,7 @@ Areas index: `/service-areas/`
 
 | Area page | URL | Status |
 |---|---|---|
-| Jacksonville | `/service-areas/jacksonville-nc/` | live |
+| Jacksonville | `/` (homepage "Serving Jacksonville, NC" section) | merged Sept 2026, old URL 301s to `/` via `public/_redirects` |
 | Camp Lejeune | `/service-areas/camp-lejeune-nc/` | live |
 | Richlands | `/service-areas/richlands-nc/` | live |
 | Swansboro | `/service-areas/swansboro-nc/` | live |
@@ -51,13 +51,13 @@ Each area page has 500+ words, one H1, BreadcrumbList JSON-LD, links to all 9 se
 
 ## GSC actions (property `sc-domain:roadgunrepairs.com`)
 
-1. Resubmit `https://roadgunrepairs.com/sitemap.xml`. It now has 18 URLs.
+1. Resubmit `https://roadgunrepairs.com/sitemap.xml`. It now has 17 URLs (Jacksonville area page merged into the homepage in Sept 2026).
 2. Request indexing, in this order:
    1. `https://roadgunrepairs.com/`
    2. `https://roadgunrepairs.com/services/`
    3. `https://roadgunrepairs.com/service-areas/`
    4. `https://roadgunrepairs.com/service-areas/camp-lejeune-nc/`
-   5. `https://roadgunrepairs.com/service-areas/jacksonville-nc/`
+   5. `https://roadgunrepairs.com/services/oil-change/`
    6. Then the service pages, starting with `brake-repair`, `mobile-diagnostics` and `battery-replacement`. Brake and auto repair "near me" queries already show at position 1.
 3. Watch `/privacy-policy/`. It should drop out of results over the next few weeks.
 4. Check again in 28 days against the baseline above.

@@ -7,8 +7,13 @@ export const PHONE_DISPLAY = "(910) 358-9027";
 export const PHONE_HREF = "tel:+19103589027";
 
 // Shared by the AutoRepair block in layout.tsx and every Service block.
+// Every town with an indexable page (areas.ts, confirmed: true) belongs here.
 export const AREA_SERVED = [
   { "@type": "City", name: "Jacksonville", containedInPlace: { "@type": "State", name: "North Carolina" } },
+  { "@type": "Place", name: "Camp Lejeune", containedInPlace: { "@type": "State", name: "North Carolina" } },
+  { "@type": "City", name: "Richlands", containedInPlace: { "@type": "State", name: "North Carolina" } },
+  { "@type": "City", name: "Swansboro", containedInPlace: { "@type": "State", name: "North Carolina" } },
+  { "@type": "City", name: "Hubert", containedInPlace: { "@type": "State", name: "North Carolina" } },
   { "@type": "City", name: "Holly Ridge", containedInPlace: { "@type": "State", name: "North Carolina" } },
   { "@type": "AdministrativeArea", name: "Onslow County", containedInPlace: { "@type": "State", name: "North Carolina" } },
   { "@type": "AdministrativeArea", name: "Craven County", containedInPlace: { "@type": "State", name: "North Carolina" } },

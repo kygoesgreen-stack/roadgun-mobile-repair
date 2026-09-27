@@ -6,7 +6,7 @@ import CtaBand from "../../components/CtaBand";
 import JsonLd from "../../components/JsonLd";
 import { BulletList, ProseSection } from "../../components/Prose";
 import { getService, services } from "@/src/lib/services";
-import { confirmedAreas } from "@/src/lib/areas";
+import { areaHref, confirmedAreas } from "@/src/lib/areas";
 import {
   AREA_SERVED,
   BUSINESS_ID,
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getService((await params).slug);
   if (!service) return {};
   return pageMetadata({
-    title: `Mobile ${service.name} in Jacksonville, NC | Roadgun Mobile Repair`,
+    title: service.title ?? `Mobile ${service.name} in Jacksonville, NC | Roadgun`,
     description: service.metaDescription,
     path: `/services/${service.slug}`,
     image: service.image,
@@ -116,6 +116,14 @@ export default async function ServicePage({ params }: Props) {
             ))}
           </ProseSection>
 
+          {service.extraSections?.map((section) => (
+            <ProseSection key={section.heading} heading={section.heading}>
+              {section.paragraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </ProseSection>
+          ))}
+
           <ProseSection heading="Driveway or shop: what it costs you">
             {service.cost.map((p) => (
               <p key={p}>{p}</p>
@@ -172,7 +180,7 @@ export default async function ServicePage({ params }: Props) {
               {confirmedAreas.map((a, i) => (
                 <span key={a.slug}>
                   <a
-                    href={`/service-areas/${a.slug}/`}
+                    href={areaHref(a)}
                     className="text-orange-400 underline-offset-2 hover:underline"
                   >
                     {a.town}

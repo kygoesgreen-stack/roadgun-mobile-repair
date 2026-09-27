@@ -4,7 +4,9 @@ import CtaBand from "./components/CtaBand";
 
 export const metadata: Metadata = {
   title: "Page Not Found | Roadgun Mobile Repair",
+  description: "This page does not exist. Find mobile repair services and service areas for Roadgun Mobile Repair in Jacksonville, NC.",
   alternates: { canonical: null },
+  robots: { index: false, follow: true },
 };
 
 export default function NotFound() {

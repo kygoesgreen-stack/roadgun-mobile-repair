@@ -5,7 +5,7 @@ import PageHero from "../../components/PageHero";
 import CtaBand from "../../components/CtaBand";
 import JsonLd from "../../components/JsonLd";
 import { ProseSection } from "../../components/Prose";
-import { areas, getArea } from "@/src/lib/areas";
+import { areaPages } from "@/src/lib/areas";
 import { getService, services } from "@/src/lib/services";
 import { breadcrumbJsonLd, pageMetadata } from "@/src/lib/site";
 
@@ -14,15 +14,16 @@ type Props = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return areas.map((a) => ({ slug: a.slug }));
+  return areaPages.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const area = getArea((await params).slug);
+  const { slug } = await params;
+  const area = areaPages.find((a) => a.slug === slug);
   if (!area) return {};
   return {
     ...pageMetadata({
-      title: `Mobile Mechanic in ${area.town}, NC | Roadgun Mobile Repair`,
+      title: `Mobile Mechanic in ${area.town}, NC | Roadgun`,
       description: area.metaDescription,
       path: `/service-areas/${area.slug}`,
     }),
@@ -32,7 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function AreaPage({ params }: Props) {
-  const area = getArea((await params).slug);
+  const { slug } = await params;
+  const area = areaPages.find((a) => a.slug === slug);
   if (!area) notFound();
 
   const path = `/service-areas/${area.slug}`;

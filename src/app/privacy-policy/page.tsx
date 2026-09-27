@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
 
         <section>
           <h2 className="text-xl font-semibold text-white mb-3">
-            3. Mobile Information &mdash; Non-Sharing Statement
+            3. Mobile Information: Non-Sharing Statement
           </h2>
           <p className="bg-dark-700 p-4 rounded-lg border border-orange-500/30">
             <strong className="text-orange-400">Mobile Information Non-Sharing:</strong>{" "}

@@ -113,7 +113,7 @@ export default function Services() {
             Mobile Repair Services
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-steel-400">
-            Skip the tow and the waiting room. We bring the shop to your driveway for normal maintenance and minor repairs.
+            Skip the tow and the waiting room. We bring the shop to your driveway for routine maintenance and everyday auto repair.
           </p>
           <a href="/services/" className="mt-4 inline-block text-sm font-semibold text-orange-400 hover:underline">
             See all services

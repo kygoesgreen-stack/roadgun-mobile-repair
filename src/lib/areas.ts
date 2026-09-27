@@ -17,6 +17,8 @@ export type Area = {
 };
 
 export const areas: Area[] = [
+  // Rendered on the homepage (home-jacksonville.tsx), not its own route.
+  // metaDescription is only the card blurb on /service-areas/.
   {
     slug: "jacksonville-nc",
     town: "Jacksonville",
@@ -359,7 +361,18 @@ export const areas: Area[] = [
   },
 ];
 
+// Jacksonville's copy lives on the homepage. /service-areas/jacksonville-nc/
+// is not generated and 301s to / (public/_redirects).
+export const HOME_AREA_SLUG = "jacksonville-nc";
+
 export const confirmedAreas = areas.filter((a) => a.confirmed);
+
+/** Areas that get their own /service-areas/[slug]/ route. */
+export const areaPages = areas.filter((a) => a.slug !== HOME_AREA_SLUG);
+
+export function areaHref(area: Area): string {
+  return area.slug === HOME_AREA_SLUG ? "/" : `/service-areas/${area.slug}/`;
+}
 
 export function getArea(slug: string): Area | undefined {
   return areas.find((a) => a.slug === slug);

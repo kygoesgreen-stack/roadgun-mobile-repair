@@ -6,7 +6,7 @@ import { services } from "@/src/lib/services";
 import { breadcrumbJsonLd, pageMetadata } from "@/src/lib/site";
 
 export const metadata = pageMetadata({
-  title: "Mobile Auto Repair Services in Jacksonville, NC | Roadgun Mobile Repair",
+  title: "Mobile Auto Repair Services in Jacksonville, NC | Roadgun",
   description:
     "Mobile diagnostics, brakes, batteries, starters, oil changes, inspections and trailer repair in Jacksonville, NC. We come to you. Call (910) 358-9027.",
   path: "/services",

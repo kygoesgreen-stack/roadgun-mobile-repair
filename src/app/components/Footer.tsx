@@ -1,4 +1,4 @@
-import { confirmedAreas } from "@/src/lib/areas";
+import { areaHref, confirmedAreas } from "@/src/lib/areas";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -81,7 +81,7 @@ export default function Footer() {
               {confirmedAreas.map((a) => (
                 <a
                   key={a.slug}
-                  href={`/service-areas/${a.slug}/`}
+                  href={areaHref(a)}
                   className="block text-sm text-steel-400 transition-colors hover:text-orange-400"
                 >
                   {a.town}, NC

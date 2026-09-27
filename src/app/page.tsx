@@ -4,6 +4,7 @@ import Services from "./components/Services";
 import HowItWorks from "./components/HowItWorks";
 import About from "./components/About";
 import Reviews from "./components/Reviews";
+import HomeJacksonville from "./components/home-jacksonville";
 import ServiceArea from "./components/ServiceArea";
 import ContactForm from "./components/ContactForm";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <HowItWorks />
       <About />
       <Reviews />
+      <HomeJacksonville />
       <ServiceArea />
       <ContactForm />
     </PageShell>

@@ -2,11 +2,11 @@ import PageShell from "../components/PageShell";
 import PageHero from "../components/PageHero";
 import CtaBand from "../components/CtaBand";
 import JsonLd from "../components/JsonLd";
-import { confirmedAreas } from "@/src/lib/areas";
+import { areaHref, confirmedAreas } from "@/src/lib/areas";
 import { breadcrumbJsonLd, pageMetadata } from "@/src/lib/site";
 
 export const metadata = pageMetadata({
-  title: "Service Areas Around Jacksonville, NC | Roadgun Mobile Repair",
+  title: "Service Areas Around Jacksonville, NC | Roadgun",
   description:
     "Mobile mechanic serving Jacksonville, Camp Lejeune, Richlands, Swansboro, Hubert and Holly Ridge, NC. We come to you. Call (910) 358-9027.",
   path: "/service-areas",
@@ -34,7 +34,7 @@ export default function ServiceAreasIndex() {
           {confirmedAreas.map((a) => (
             <li key={a.slug}>
               <a
-                href={`/service-areas/${a.slug}/`}
+                href={areaHref(a)}
                 className="flex h-full flex-col rounded-xl border border-dark-600 bg-dark-800 p-6 transition-colors hover:border-orange-500/40 hover:bg-dark-700"
               >
                 <h2 className="text-lg font-semibold text-white font-[family-name:var(--font-display)]">

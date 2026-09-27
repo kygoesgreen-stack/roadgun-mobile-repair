@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 
 // Towns with an href have their own page under /service-areas/.
+// Jacksonville is covered on this page (home-jacksonville.tsx).
 const towns: { name: string; href?: string }[] = [
-  { name: "Jacksonville", href: "/service-areas/jacksonville-nc/" },
+  { name: "Jacksonville", href: "/#jacksonville" },
   { name: "Onslow County" },
   { name: "Craven County" },
   { name: "Holly Ridge", href: "/service-areas/holly-ridge-nc/" },
@@ -31,7 +32,7 @@ export default function ServiceArea() {
             Service Area
           </p>
           <h2 className="mt-3 text-3xl font-bold text-white font-[family-name:var(--font-display)] sm:text-4xl lg:text-5xl">
-            Serving the Jacksonville, NC Region
+            Towns We Cover Around Jacksonville
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-steel-400">
             Roadgun Mobile Repair serves Jacksonville and surrounding

@@ -49,7 +49,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-5 max-w-xl text-lg text-steel-300 sm:mt-6 sm:text-xl">
-              A mechanic who comes to you. Veteran-owned, 26 years experience.
+              Mobile auto repair from a mechanic who comes to you. Veteran-owned, 26 years experience.
             </p>
 
             {/* CTAs */}

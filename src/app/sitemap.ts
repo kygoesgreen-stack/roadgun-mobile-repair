@@ -1,12 +1,14 @@
 import { MetadataRoute } from "next";
 import { services } from "@/src/lib/services";
-import { confirmedAreas } from "@/src/lib/areas";
+import { areaPages } from "@/src/lib/areas";
 import { absoluteUrl } from "@/src/lib/site";
 
 export const dynamic = "force-static";
 
 // Privacy and terms are noindex and stay out. Unconfirmed areas stay out
-// until the owner confirms them (see areas.ts).
+// until the owner confirms them (see areas.ts). Jacksonville is the homepage.
+const confirmedAreas = areaPages.filter((a) => a.confirmed);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   return [

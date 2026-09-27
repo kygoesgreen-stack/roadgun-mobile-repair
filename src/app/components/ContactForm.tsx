@@ -129,9 +129,9 @@ export default function ContactForm() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
               </svg>
             </div>
-            <h3 className="mt-4 text-2xl font-bold text-white font-[family-name:var(--font-display)]">
+            <h2 className="mt-4 text-2xl font-bold text-white font-[family-name:var(--font-display)]">
               Request Received
-            </h3>
+            </h2>
             <p className="mt-3 text-steel-400">
               Thanks! We will review your request and get back to you shortly.
               For faster service, give us a call.

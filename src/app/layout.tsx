@@ -3,9 +3,9 @@ import "./globals.css";
 import TrackEvent from "./components/TrackEvent";
 import { AREA_SERVED, BUSINESS_ID, SITE_URL, pageMetadata } from "@/src/lib/site";
 
-const HOME_TITLE = "Mobile Mechanic in Jacksonville, NC | Roadgun Mobile Repair";
+const HOME_TITLE = "Mobile Mechanic & Auto Repair in Jacksonville, NC | Roadgun";
 const HOME_DESCRIPTION =
-  "Veteran-owned mobile mechanic in Jacksonville, NC. Diagnostics, brakes, batteries and more at your home or work. 26 years experience. Call (910) 358-9027.";
+  "Veteran-owned mobile mechanic and auto repair in Jacksonville, NC. Brakes, batteries, oil changes and diagnostics at home or work. Call (910) 358-9027.";
 
 // Defaults are the homepage values; every other page sets its own title,
 // description, canonical, and social tags through pageMetadata().
@@ -53,6 +53,8 @@ export default function RootLayout({
               "@type": "AutoRepair",
               "@id": BUSINESS_ID,
               name: "Roadgun Mobile Repair",
+              // Facebook, Yelp, and MapQuest list the business under this spelling.
+              alternateName: "Road Gun Mobile Repair",
               url: `${SITE_URL}/`,
               image: "https://roadgunrepairs.com/images/hero-poster.jpg",
               logo: "https://roadgunrepairs.com/favicon-32.png",
@@ -91,6 +93,7 @@ export default function RootLayout({
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brake Repair" } },
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Battery Replacement" } },
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Trailer Repair" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Oil Change" } },
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Auto Repair" } },
               ],
               // aggregateRating and review intentionally omitted.

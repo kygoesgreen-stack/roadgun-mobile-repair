@@ -3,11 +3,14 @@
 // until Ky gets real numbers from Travis.
 
 export type Faq = { q: string; a: string };
+export type ServiceSection = { heading: string; paragraphs: string[] };
 
 export type Service = {
   slug: string;
   /** Used in "Mobile {name} in Jacksonville, NC". */
   name: string;
+  /** Overrides the default title when the default runs past 60 characters. */
+  title?: string;
   /** Short label for homepage cards and link lists. */
   cardTitle: string;
   cardDescription: string;
@@ -17,6 +20,8 @@ export type Service = {
   intro: string[];
   included: string[];
   visit: string[];
+  /** Extra long-form sections rendered after "How a mobile visit works". */
+  extraSections?: ServiceSection[];
   cost: string[];
   symptoms: string[];
   onSite: string[];
@@ -211,6 +216,7 @@ export const services: Service[] = [
   {
     slug: "starter-alternator-repair",
     name: "Starter and Alternator Repair",
+    title: "Starter & Alternator Repair in Jacksonville, NC | Roadgun",
     cardTitle: "Starters & Alternators",
     cardDescription:
       "Grinding start or dimming lights? We diagnose and replace starters and alternators on-site to keep your electrical system healthy.",
@@ -295,6 +301,30 @@ export const services: Service[] = [
       "When you book, tell us the year, make, model, and engine so we bring the right oil and filter. We use a drain pan and mats so nothing ends up on your driveway.",
       "On site, we drain the oil, replace the filter, refill to spec, and check the level after the engine runs. Then we check the other fluids and give the vehicle a quick look over. If we see anything that needs attention, we point it out and you decide what to do with it.",
     ],
+    extraSections: [
+      {
+        heading: "How long a driveway oil change takes",
+        paragraphs: [
+          "A plain oil and filter change is one of the shortest jobs we do. Most of the time on site goes to letting the old oil drain completely, because rushing that step leaves dirty oil in the pan. After the refill, we run the engine, shut it off, let the oil settle, and recheck the level before we pack up.",
+          "A few things add time: a filter that sits somewhere awkward, a skid plate that has to come off first, or adding a coolant or transmission drain and fill to the same visit. Tell us the year, make, model, and engine when you book and we will give you a realistic time estimate for your vehicle. You do not need to stand in the driveway while we work. Many customers stay inside, keep working, or leave the keys and come back to a finished job.",
+        ],
+      },
+      {
+        heading: "Fleet vehicles and work trucks",
+        paragraphs: [
+          "If your business runs a few pickups, vans, or service trucks around Jacksonville, pulling each one off the road for a lube shop run costs you a driver and a vehicle for part of a day. We can service several vehicles in one visit at your shop, yard, or job site, so the trucks stay where the work is.",
+          "We work on cars, pickups, SUVs, and many light and medium duty trucks. Work trucks often need a different oil grade or a larger oil capacity than a family car, so send us the list of vehicles and engines ahead of time and we will show up with the right oil and filters for each one. Our hours are Monday through Friday, 6 AM to 6 PM, which makes it easy to catch trucks before they head out or after they come back in.",
+          "A fleet visit is also a good time for a second set of eyes. While the oil drains, we look at belts, hoses, tires, and visible leaks on each vehicle and tell you which ones need attention before they break down on a job.",
+        ],
+      },
+      {
+        heading: "Why it beats waiting at a lube shop",
+        paragraphs: [
+          "A quick-lube stop sounds fast until you add it up: the drive across town on Western Boulevard or Lejeune Boulevard, the line of cars ahead of you, the wait in the bay, and the drive back. On a busy Saturday that can eat a big part of your one day off. A mobile oil change skips all of it, because the vehicle never moves.",
+          "There is also no counter and no upsell script. You deal directly with Travis, a veteran with 26 years of experience who does the work himself. If he sees a cracked belt or a leaking hose, he shows it to you and explains how urgent it is. If everything looks fine, he tells you that too. There is no pitch for add-ons you did not ask for.",
+        ],
+      },
+    ],
     cost: [
       "A quick-lube shop is fast once you are in the bay, but the wait, the drive, and the upsell at the counter add up. A mobile oil change costs you almost no time, and there is no pressure to buy add-ons you do not need.",
       "Price depends on your engine's oil capacity and whether it needs synthetic. Call for a quote, and ask about doing multiple vehicles in the same visit.",
@@ -333,6 +363,7 @@ export const services: Service[] = [
   {
     slug: "belts-hoses",
     name: "Belt and Hose Replacement",
+    title: "Belt and Hose Replacement in Jacksonville, NC | Roadgun",
     cardTitle: "Belts & Hoses",
     cardDescription:
       "Cracked serpentine belt or aging radiator hose? We inspect and replace them before they leave you stranded.",
@@ -394,6 +425,7 @@ export const services: Service[] = [
   {
     slug: "check-engine-light",
     name: "Check Engine Light Diagnosis",
+    title: "Check Engine Light Diagnosis in Jacksonville, NC | Roadgun",
     cardTitle: "Check Engine Light",
     cardDescription:
       "We scan, read the codes, and give you an honest answer about what is going on and what needs to be done. No guesswork.",
